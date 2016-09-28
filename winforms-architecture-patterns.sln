@@ -9,7 +9,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layered-App", "Layered-App\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{26961BC4-A0EA-4234-9D48-278989E88418}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{180C05E6-D53F-4D99-94BA-B3C623D036EC}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		winforms-architecture-patterns.vsmdi = winforms-architecture-patterns.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = winforms-architecture-patterns.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -59,6 +71,16 @@ Global
 		{26961BC4-A0EA-4234-9D48-278989E88418}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{26961BC4-A0EA-4234-9D48-278989E88418}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{26961BC4-A0EA-4234-9D48-278989E88418}.Release|x86.ActiveCfg = Release|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
