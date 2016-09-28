@@ -15,14 +15,15 @@ namespace Plain_App
 {
     public partial class MainForm : Form
     {
-        private List<Login> loginList;
-        private string filePath;
-        private bool isEditMode;
+        private List<Login> loginList; // List of logins
+        private string filePath; // Path to login file on disk
+        private bool isEditMode; // Indicates if logins are displayed or edited
 
         public MainForm()
         {
             InitializeComponent();
 
+            // Load logins from file
             filePath = @"passwords.xml";
             if (File.Exists(filePath))
             {
@@ -38,23 +39,24 @@ namespace Plain_App
                 loginList.Add(new Login(2, "OpenClassrooms", "bpesquet", "qwerty", "https://openclassrooms.com"));
                 loginList.Add(new Login(3, "Deezer", "bpesquet", "123456", "https://www.deezer.com"));
             }
-            foreach (Login login in loginList)
-            {
-                loginLB.Items.Add(login);
-            }
+            // Link view to login list
+            loginLB.DataSource = loginList;
             loginLB.SelectedIndex = 0; // List should always contain items
 
-            isEditMode = false;
+            isEditMode = false; // Display mode
         }
 
         private void loginLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Display login details
-            Login selectedLogin = (Login)loginLB.SelectedItem;
-            titleTB.Text = selectedLogin.Title;
-            usernameTB.Text = selectedLogin.Username;
-            passwordTB.Text = selectedLogin.Password;
-            urlTB.Text = selectedLogin.Url;
+            if (loginLB.SelectedItem != null)
+            {
+                // Display login details
+                Login selectedLogin = (Login)loginLB.SelectedItem;
+                titleTB.Text = selectedLogin.Title;
+                usernameTB.Text = selectedLogin.Username;
+                passwordTB.Text = selectedLogin.Password;
+                urlTB.Text = selectedLogin.Url;
+            }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -73,6 +75,11 @@ namespace Plain_App
                 new XmlSerializer(typeof(List<Login>)).Serialize(writer, loginList);
                 writer.Close();
 
+                // Refresh login view in case a title has been modified
+                loginLB.DataSource = null;
+                loginLB.DataSource = loginList;
+                loginLB.SelectedIndex = 0; // List should always contain items
+
                 editBtn.Text = "Edit";
             }
             else
@@ -80,7 +87,8 @@ namespace Plain_App
                 editBtn.Text = "Save";
             }
 
-            isEditMode = !isEditMode;
+            isEditMode = !isEditMode; // Switch edit mode
+            // Switch control states
             titleTB.ReadOnly = !titleTB.ReadOnly;
             usernameTB.ReadOnly = !usernameTB.ReadOnly;
             passwordTB.ReadOnly = !passwordTB.ReadOnly;
@@ -98,7 +106,8 @@ namespace Plain_App
             urlTB.Text = selectedLogin.Url;
 
             editBtn.Text = "Edit";
-            isEditMode = !isEditMode;
+            isEditMode = !isEditMode; // Switch edit mode
+            // Switch control states
             titleTB.ReadOnly = !titleTB.ReadOnly;
             usernameTB.ReadOnly = !usernameTB.ReadOnly;
             passwordTB.ReadOnly = !passwordTB.ReadOnly;

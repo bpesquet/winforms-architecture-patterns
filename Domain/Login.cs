@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// POCO class representing a user login
+    /// </summary>
     public class Login
     {
         public int Id { get; set; }
