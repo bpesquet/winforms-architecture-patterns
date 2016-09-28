@@ -60,11 +60,9 @@ namespace Tests
         #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod2()
         {
-            //
-            // TODO: ajoutez ici la logique du test
-            //
+            Assert.IsTrue(false);
         }
     }
 }
