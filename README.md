@@ -14,14 +14,14 @@ A simple WinForms app built using different architectural patterns:
     * Pros: concerns are clearly separated. Most of the app is testable, including UI logic code (in presenters).
     * Cons: complicates the architecture. Presenter<->View data sync is tedious. A bit overkill for some projects.
 
-Some interesting resources:
+Some interesting resources on the topic:
 
 * http://stackoverflow.com/questions/2056/what-are-mvp-and-mvc-and-what-is-the-difference
 * http://aspiringcraftsman.com/2007/08/25/interactive-application-architecture/
 * http://codebetter.com/jeremymiller/2007/07/26/the-build-your-own-cab-series-table-of-contents/
 * https://github.com/mrts/winforms-mvp
 * http://aviadezra.blogspot.fr/2008/10/model-view-presenter-design-pattern.html
-* http://aviadezra.blogspot.fr/2008/10/model-view-presenter-design-pattern.html
+
 
 
 
