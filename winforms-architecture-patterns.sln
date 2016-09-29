@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		winforms-architecture-patterns.vsmdi = winforms-architecture-patterns.vsmdi
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVP-PassiveView-App", "MVP-PassiveView-App\MVP-PassiveView-App.csproj", "{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = winforms-architecture-patterns.vsmdi
@@ -81,6 +83,16 @@ Global
 		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{296A6CAA-AE16-4F61-B70A-8B8D8B386B67}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Debug|x86.ActiveCfg = Debug|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Debug|x86.Build.0 = Debug|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Release|Any CPU.ActiveCfg = Release|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Release|x86.ActiveCfg = Release|x86
+		{CA8D0756-D9D7-489F-B997-2A7CA558FF1B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
