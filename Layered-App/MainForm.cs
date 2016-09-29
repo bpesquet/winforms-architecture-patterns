@@ -51,7 +51,7 @@ namespace Layered_App
                 selectedLogin.Url = urlTB.Text;
 
                 // Save it
-                loginRepository.Save(selectedLogin);
+                loginRepository.Update(selectedLogin);
 
                 // Refresh login view in case a title has been modified
                 RefreshLoginListView();

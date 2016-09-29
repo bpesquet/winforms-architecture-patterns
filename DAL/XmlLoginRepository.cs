@@ -38,8 +38,22 @@ namespace DAL
             return loginList;
         }
 
-        public void Save(Login login)
+        public Login Get(int id)
         {
+            // Find login with this id in list
+            return loginList.Find(l => l.Id == id);
+        }
+
+        public void Update(Login login)
+        {
+            // Search login in list
+            int index = loginList.FindIndex(l => l.Id == login.Id);
+            if (index >= 0)
+                loginList[index] = login; // If found, update it
+            else
+            {
+                //TODO: handle error
+            }
             // Save the list
             StreamWriter writer = new StreamWriter(filePath);
             new XmlSerializer(typeof(List<Login>)).Serialize(writer, loginList);

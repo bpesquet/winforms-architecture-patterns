@@ -15,9 +15,16 @@ namespace DAL
         List<Login> GetAll();
 
         /// <summary>
-        /// Save a login
+        /// Retrieve a login based on its id
+        /// </summary>
+        /// <param name="id">The login id</param>
+        /// <returns>The login or null if not found</returns>
+        Login Get(int id);
+
+        /// <summary>
+        /// Update a login
         /// </summary>
         /// <param name="login">The login to be saved</param>
-        void Save(Login login);
+        void Update(Login login);
     }
 }
