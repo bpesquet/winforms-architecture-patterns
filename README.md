@@ -16,7 +16,8 @@ A simple WinForms app (a very basic password manager) built using different arch
 
 Disclaimer:
 
-* Software architecture is all tradeoffs and compromises. I made somme choices to keep things accessible. There are tons of other ways to build WinForms apps and apply these patterns (see resources for some alternatives).
+* Software architecture is all tradeoffs and compromises. I made some choices to keep things accessible. There are tons of other ways to build WinForms apps and apply these patterns (see resources for some alternatives).
+* Complex architectures offer most benefits in big projects, unlike this one.
 * I am no C# guru. Feel free to notify me of any mistake or suboptimal code.
 
 Some useful resources:
