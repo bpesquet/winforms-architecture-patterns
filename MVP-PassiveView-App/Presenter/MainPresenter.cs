@@ -18,8 +18,9 @@ namespace MVP_PassiveView_App.Presenter
             this.loginRepository = loginRepository;
             view = mainView;
             mainView.Presenter = this;
-            isEditMode = false;  // Display mode
 
+            isEditMode = false; // Display mode
+            
             RefreshLoginListView(); // Initial refresh
         }
 
