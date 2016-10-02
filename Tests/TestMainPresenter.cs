@@ -56,9 +56,9 @@ namespace Tests
         [TestMethod]
         public void MainPresenter_LoginSelectedAction()
         {
-            Login selectedLogin = stubLoginList[0];
+            Login selectedLogin = stubLoginList[1];
             var mockView = Mock.Get(mockMainView);
-            mockView.Setup(view => view.SelectedLoginIndex).Returns(0);
+            mockView.Setup(view => view.SelectedLoginIndex).Returns(1);
             mockView.Setup(view => view.SelectedLogin).Returns(selectedLogin);
 
             presenter.LoginSelectedAction();
@@ -74,7 +74,7 @@ namespace Tests
         {
             presenter.LoginEditedAction(); // Switch to edit mode
 
-            // Check UI elements's states
+            // Check UI elements' states
             Assert.AreEqual("Save", mockMainView.EditButtonText);
             Assert.AreEqual(false, mockMainView.TitleReadOnly);
             Assert.AreEqual(false, mockMainView.UsernameReadOnly);
@@ -87,17 +87,21 @@ namespace Tests
             var mockView = Mock.Get(mockMainView);
             mockView.Setup(view => view.SelectedLoginIndex).Returns(1);
             mockView.Setup(view => view.SelectedLogin).Returns(selectedLogin);
-            mockView.Setup(view => view.Title).Returns(selectedLogin.Title);
-            mockView.Setup(view => view.Username).Returns(selectedLogin.Username);
-            mockView.Setup(view => view.Password).Returns(selectedLogin.Password);
-            mockView.Setup(view => view.Url).Returns(selectedLogin.Url);
+            // Mocks an UI update by the user
+            mockView.Setup(view => view.Title).Returns("New title");
+            mockView.Setup(view => view.Username).Returns("New username");
+            mockView.Setup(view => view.Password).Returns("New password");
+            mockView.Setup(view => view.Url).Returns("New URL");
 
             presenter.LoginEditedAction(); // Save the updated login
 
             var mockRepo = Mock.Get(mockLoginRepository);
-            // Check that Update method is called on repository with the right parameter
-            mockRepo.Verify(repository => repository.Update(selectedLogin));
-            // Check UI elements's states
+            // Check that Update method is called on repository with the updated login
+            mockRepo.Verify(repository => repository.Update(It.Is<Login>(t => t.Title == "New title")));
+            mockRepo.Verify(repository => repository.Update(It.Is<Login>(t => t.Username == "New username")));
+            mockRepo.Verify(repository => repository.Update(It.Is<Login>(t => t.Password == "New password")));
+            mockRepo.Verify(repository => repository.Update(It.Is<Login>(t => t.Url == "New URL")));
+            // Check UI elements' states
             Assert.AreEqual("Edit", mockMainView.EditButtonText);
             Assert.AreEqual(true, mockMainView.TitleReadOnly);
             Assert.AreEqual(true, mockMainView.UsernameReadOnly);
@@ -121,12 +125,12 @@ namespace Tests
             var mockRepo = Mock.Get(mockLoginRepository);
             // Check that Update method is never called on repository
             mockRepo.Verify(repository => repository.Update(It.IsAny<Login>()), Times.Never());
-            // Check that setters are called on view
+            // Check that setters are called on view with the current login
             mockView.VerifySet(view => view.Title = selectedLogin.Title);
             mockView.VerifySet(view => view.Username = selectedLogin.Username);
             mockView.VerifySet(view => view.Password = selectedLogin.Password);
             mockView.VerifySet(view => view.Url = selectedLogin.Url);
-            // Check UI elements's states
+            // Check UI elements' states
             Assert.AreEqual("Edit", mockMainView.EditButtonText);
             Assert.AreEqual(true, mockMainView.TitleReadOnly);
             Assert.AreEqual(true, mockMainView.UsernameReadOnly);
