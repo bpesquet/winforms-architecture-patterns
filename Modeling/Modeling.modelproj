@@ -34,17 +34,6 @@
       <SubType>Content</SubType>
       <DependentUpon>Layered-App.layerdiagram</DependentUpon>
     </Validate>
-    <Validate Include="MVP-PassiveView-App.layerdiagram">
-      <SubType>Content</SubType>
-    </Validate>
-    <Validate Include="MVP-PassiveView-App.layerdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>MVP-PassiveView-App.layerdiagram</DependentUpon>
-    </Validate>
-    <Validate Include="MVP-PassiveView-App.layerdiagram.suppressions">
-      <SubType>Content</SubType>
-      <DependentUpon>MVP-PassiveView-App.layerdiagram</DependentUpon>
-    </Validate>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
