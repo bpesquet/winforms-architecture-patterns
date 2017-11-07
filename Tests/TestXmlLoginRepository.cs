@@ -19,7 +19,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Test_GetAll()
+        public void XmlLoginRepository_GetAll()
         {
             List<Login> loginList = loginRepository.GetAll();
 
@@ -27,7 +27,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Test_Get()
+        public void XmlLoginRepository_Get()
         {
             Login login = loginRepository.Get(2);
 
@@ -39,7 +39,13 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Test_Update()
+        public void XmlLoginRepository_Get_NonExistent()
+        {
+            Assert.IsNull(loginRepository.Get(4));
+        }
+
+        [TestMethod]
+        public void XmlLoginRepository_Update()
         {
             string newTitle = "Spotify";
             Login login = loginRepository.Get(3);
@@ -47,6 +53,15 @@ namespace Tests
             loginRepository.Update(login);
 
             Assert.AreEqual(newTitle, loginRepository.Get(3).Title);
+        }
+
+        [TestMethod]
+        public void XmlLoginRepository_Update_NonExistent()
+        {
+            Login login = new Login(4, "", "", "", "");
+            loginRepository.Update(login);
+
+            Assert.IsNull(loginRepository.Get(4));
         }
     }
 }

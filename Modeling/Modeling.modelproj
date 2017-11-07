@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{508757ff-b49b-41ca-877e-7c858a33cd8e}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>Modeling</Name>
+    <RootNamespace>Modeling</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\Modeling.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Layered-App.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Layered-App.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Layered-App.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Layered-App.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Layered-App.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Name>DAL</Name>
+      <Project>{26961bc4-a0ea-4234-9d48-278989e88418}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Name>Domain</Name>
+      <Project>{d34a33c8-43df-4f14-b8bc-90e7a8806e59}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Layered-App\Layered-App.csproj">
+      <Name>Layered-App</Name>
+      <Project>{4d12dbb1-831e-4b80-a433-2eae6133cdd9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MVP-PassiveView-App\MVP-PassiveView-App.csproj">
+      <Name>MVP-PassiveView-App</Name>
+      <Project>{ca8d0756-d9d7-489f-b997-2a7ca558ff1b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

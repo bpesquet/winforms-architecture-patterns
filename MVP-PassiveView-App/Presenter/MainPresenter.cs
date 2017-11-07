@@ -18,8 +18,8 @@ namespace MVP_PassiveView_App.Presenter
             this.loginRepository = loginRepository;
             view = mainView;
             mainView.Presenter = this;
-            isEditMode = false;  // Display mode
 
+            InitEditMode();
             RefreshLoginListView(); // Initial refresh
         }
 
@@ -34,7 +34,7 @@ namespace MVP_PassiveView_App.Presenter
                 view.Title = login.Title;
                 view.Username = login.Username;
                 view.Password = login.Password;
-                view.Url = login.Username;
+                view.Url = login.Url;
             }
         }
 
@@ -84,6 +84,20 @@ namespace MVP_PassiveView_App.Presenter
             view.LoginList = null;
             view.LoginList = loginRepository.GetAll();
             view.SelectedLoginIndex = 0; // List should always contain items
+        }
+
+        /// <summary>
+        /// Init UI elements's states
+        /// </summary>
+        private void InitEditMode()
+        {
+            isEditMode = false;
+            view.EditButtonText = "Edit";
+            view.TitleReadOnly = true;
+            view.UsernameReadOnly = true;
+            view.PasswordReadOnly = true;
+            view.UrlReadOnly = true;
+            view.CancelButtonVisible = false;
         }
 
         /// <summary>

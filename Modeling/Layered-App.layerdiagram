@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3e0f4654-0c28-4ec9-93f4-23952c1414cb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="fdb3f06c-cbaf-49c5-9c17-d1ea00e533f4" name="Layered-App">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a0900f39-569a-4a97-a0a1-f6e1cc68b1dc" direction="Forward">
+          <layerMoniker Id="f38e84aa-c2f6-43db-abc9-ad3192bcba2a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="26a6bcc0-d767-43fe-a240-17a3e511de33" direction="Forward">
+          <layerMoniker Id="e79e3022-ec28-451f-b125-fac6aff56b33" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5381aa85-67c8-4a06-b5f2-6987062f556f" name="Layered-App">
+          <ArtifactNode Label="Layered-App" Category="CodeSchema_Project" Id="(Assembly=&quot;$(DesktopUri)/winforms-architecture-patterns/Layered-App/Layered-App.csproj&quot;)">
+            <Category Ref="CodeSchema_SourceFile" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Layered-App)" Label="Layered-App.exe" Category="FileSystem.Category.FileOfType.exe">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="f38e84aa-c2f6-43db-abc9-ad3192bcba2a" name="DAL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6c598ebe-1e17-4f7e-83fd-77acd377a7cc" direction="Forward">
+          <layerMoniker Id="e79e3022-ec28-451f-b125-fac6aff56b33" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="92118d3b-1a40-45ca-8606-304ab43625f9" name="DAL">
+          <ArtifactNode Label="DAL" Category="CodeSchema_Project" Id="(Assembly=&quot;$(DesktopUri)/winforms-architecture-patterns/DAL/DAL.csproj&quot;)">
+            <Category Ref="CodeSchema_SourceFile" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DAL)" Label="DAL.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="e79e3022-ec28-451f-b125-fac6aff56b33" name="Domain">
+      <references>
+        <reference Id="15e497a5-0e83-4252-a977-5bd7d826d41f" name="Domain">
+          <ArtifactNode Label="Domain" Category="CodeSchema_Project" Id="(Assembly=&quot;$(DesktopUri)/winforms-architecture-patterns/Domain/Domain.csproj&quot;)">
+            <Category Ref="CodeSchema_SourceFile" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Domain)" Label="Domain.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>
